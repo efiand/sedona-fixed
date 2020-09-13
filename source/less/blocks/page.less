@@ -1,0 +1,20 @@
+.page {
+	width: 1200px;
+	margin: 0 auto;
+	background-color: #ffffff;
+	box-shadow: 0 5px 15px rgba(0, 1, 1, 0.2);
+}
+
+.page--no-js {
+	.page__init-hidden {
+		// элементы, которые покажутся при инициализации JS
+		display: none;
+	}
+}
+
+.page--js {
+	.page__init-show {
+		// элементы, которые скроются  при инициализации JS
+		display: none;
+	}
+}

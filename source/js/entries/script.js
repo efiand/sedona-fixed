@@ -1,4 +1,7 @@
-import TextField from '../components/text-field';
+import Page from '../cpmponents/page';
 import { applyClass } from '../utils';
 
-applyClass(TextField, `[type^="te"], [type="email"], [type="search"]`);
+const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
+document.documentElement.style.setProperty(`--scrollbar-width`, `${scrollbarWidth}px`);
+
+applyClass(Page, document.querySelectorAll(`.page`));

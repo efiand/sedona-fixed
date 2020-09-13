@@ -3,19 +3,71 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>{{ title }}</title>
+	<title>Седона</title>
 	<link rel="stylesheet" href="css/style.min.css">
 	<meta name="HandheldFriendly" content="True">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<link rel="canonical" href="{{ url }}">
 	<meta name="format-detection" content="telephone=no">
+	<link rel="preload" href="fonts/ptsans.woff2" as="font" crossorigin="anonymous">
+	<link rel="preload" href="fonts/ptsansbold.woff2" as="font" crossorigin="anonymous">
 </head>
-<body>
-	<header></header>
+<body class="page page--no-js">
+	<header class="page-header">
+		{% block logo %}
+			<a class="page-header__logo-link" href="index.html">
+				<img src="img/logo-sedona.svg" width="138" height="70" alt="Лого Седоны">
+			</a>
+		{% endblock %}
+		<nav>
+			<ul class="page-header__nav-list">
+				{% block page_menu %}
+					<li class="page-header__nav-item">
+						<a  class="page-header__nav-link" href="blank.html">Информация</a>
+					</li>
+					<li class="page-header__nav-item">
+						<a  class="page-header__nav-link" href="blank.html">Фото и видео</a>
+					</li>
+					<li class="page-header__nav-item">
+						<a  class="page-header__nav-link" href="blank.html">Карта штата</a>
+					</li>
+					<li class="page-header__nav-item">
+						<a  class="page-header__nav-link" href="hotels.html">Гостиницы</a>
+					</li>
+				{% endblock %}
+			</ul>
+		</nav>
+	</header>
 	<main>
 		{% block main %}{% endblock %}
 	</main>
-	<footer></footer>
+	<footer class="page-footer">
+		<p class="page-footer__item">
+			<a class="page-footer__contact-link" href="#!">#visitsedona</a>
+			<a class="page-footer__contact-link" href="tel:+74956660166">Тел: +7(495) 666-01-66</a>
+		</p>
+		<ul class="page-footer__item social">
+			<li>
+				<a class="social__link social__link--twitter" href="#!">
+					<span class="visually-hidden">Мы в Twitter</span>
+				</a>
+			</li>
+			<li>
+				<a class="social__link social__link--fb" href="#!">
+					<span class="visually-hidden">Мы в Facebook</span>
+				</a>
+			</li>
+			<li>
+				<a class="social__link social__link--youtube" href="#!">
+					<span class="visually-hidden">Мы в Youtube</span>
+				</a>
+			</li>
+		</ul>
+		<p class="page-footer__item">
+			Website by <a href="https://htmlacademy.ru/intensive/htmlcss">
+				<img src="img/logo-htmlacademy.svg" width="114" height="40" alt="HTML Academy">
+			</a>
+		</p>
+	</footer>
 	<script src="js/script.min.js"></script>
 </body>
 </html>
