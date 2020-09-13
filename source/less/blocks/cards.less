@@ -45,12 +45,15 @@
 .cards__img {
 	grid-column: 2 ~"/" -1;
 	grid-row: 1 ~"/" 2;
+	height: 100%;
+	object-fit: cover;
 }
 
 .cards__group {
 	display: grid;
 	grid-column: 1 ~"/" -1;
 	grid-template-columns: 1fr 1fr 1fr;
+	background-color: var(--color-accent);
 
 	&:nth-child(even) {
 		.cards__item--alter {
