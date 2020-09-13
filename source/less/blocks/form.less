@@ -1,6 +1,36 @@
+.form {
+	padding: 55px;
+	font-weight: 700;
+	background-color: #ffffff;
+	box-shadow: 0 7px 15px rgba(0, 1, 1, 0.15);
+}
+
+.form__group {
+	position: relative;
+	display: flex;
+	align-items: center;
+	margin: 0;
+}
+
+.form__label {
+	flex-shrink: 0;
+	max-width: 40%;
+}
+
 .form__field {
+	box-sizing: border-box;
+	width: 100%;
+	padding: 6px 42px 6px 12px;
 	font: inherit;
 	-webkit-text-fill-color: currentColor;
+	background-color: #f2f2f2;
+	border: 1px solid #f2f2f2;
 	box-shadow: none;
 	appearance: none;
+}
+
+.form__trigger {
+	position: absolute;
+	top: 6px;
+	right: 6px;
 }

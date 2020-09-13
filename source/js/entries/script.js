@@ -1,7 +1,8 @@
-import Page from '../cpmponents/page';
-import { applyClass } from '../utils';
-
+// Получение ширины скроллбара для нужд CSS
 const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
 document.documentElement.style.setProperty(`--scrollbar-width`, `${scrollbarWidth}px`);
 
-applyClass(Page, document.querySelectorAll(`.page`));
+// Показ неактуальных без загрузки скрипта элементов форм
+for (const hiddenElement of document.querySelectorAll(`.search [hidden]`)) {
+	hiddenElement.removeAttribute(`hidden`);
+}
