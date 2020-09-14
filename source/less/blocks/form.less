@@ -1,4 +1,6 @@
 .form {
+	display: flex;
+	flex-wrap: wrap;
 	padding: 55px;
 	font-weight: 700;
 	background-color: #ffffff;
@@ -9,28 +11,87 @@
 	position: relative;
 	display: flex;
 	align-items: center;
-	margin: 0;
+	width: 100%;
+	margin: 0 0 30px;
+
+	&--half {
+		width: auto;
+
+		.form__field {
+			width: 114px;
+		}
+	}
+
+	&--half-right {
+		margin-left: auto;
+
+		.form__label {
+			min-width: auto;
+			margin-right: 26px;
+		}
+	}
 }
 
 .form__label {
 	flex-shrink: 0;
+	min-width: 92px;
 	max-width: 40%;
+	margin-right: 20px;
 }
 
 .form__field {
 	box-sizing: border-box;
 	width: 100%;
-	padding: 6px 42px 6px 12px;
+	margin-left: auto;
+	padding: 5px 34px 5px 12px;
 	font: inherit;
+	line-height: 26px;
+	text-transform: inherit;
 	-webkit-text-fill-color: currentColor;
 	background-color: #f2f2f2;
 	border: 1px solid #f2f2f2;
 	box-shadow: none;
-	appearance: none;
+	appearance: textfield;
+
+	&--num {
+		padding-left: 34px;
+		text-align: center;
+	}
+
+	&::-webkit-outer-spin-button,
+	&::-webkit-inner-spin-button {
+		appearance: none;
+	}
 }
 
 .form__trigger {
 	position: absolute;
-	top: 6px;
-	right: 6px;
+	top: 0;
+	right: 0;
+	padding: 8px;
+	color: #a9a9a9;
+	background-color: transparent;
+	border: none;
+	outline: none;
+	transition: color 0.3s ease-in-out;
+	cursor: pointer;
+
+	&:hover,
+	&:focus {
+		color: #000000;
+	}
+
+	&:active {
+		color: var(--color-accent);
+	}
+}
+
+.form__trigger-icon {
+	width: 21px;
+	height: 22px;
+	fill: currentColor;
+}
+
+.form__submit {
+	width: 100%;
 }
