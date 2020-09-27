@@ -1,7 +1,6 @@
 .search__heading {
 	margin: 12px 0 28px;
 	font-size: 30px;
-	line-height: 26px;
 }
 
 .search__button {
@@ -9,28 +8,25 @@
 	width: 568px;
 	margin: 0 auto;
 	padding: 30px;
-	font-weight: 700;
-	font-size: 21px;
-	line-height: 26px;
-	font-family: inherit;
-	text-transform: inherit;
-	color: #ffffff;
-	background-color: var(--color-alter);
-	border: none;
-	cursor: pointer;
+}
 
-	&:hover,
-	&:focus {
-		background-color: var(--color-alter-hover);
-	}
-
-	&:active {
-		color: rgba(255, 255, 255, 0.3);
-		background-color: var(--color-alter-active);
-	}
+.search__body {
+	position: relative;
 }
 
 .search__form {
+	position: relative;
+	z-index: 1;
 	width: 458px;
 	margin: 0 auto;
+}
+
+.search__map {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background-image: url("../img/map.jpg");
+	background-size: cover;
 }

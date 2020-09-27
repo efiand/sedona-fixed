@@ -3,7 +3,7 @@
 	flex-wrap: wrap;
 	padding: 55px;
 	font-weight: 700;
-	background-color: #ffffff;
+	background-color: var(--color-white);
 	box-shadow: 0 7px 15px rgba(0, 1, 1, 0.15);
 }
 
@@ -45,11 +45,10 @@
 	margin-left: auto;
 	padding: 5px 34px 5px 12px;
 	font: inherit;
-	line-height: 26px;
 	text-transform: inherit;
 	-webkit-text-fill-color: currentColor;
-	background-color: #f2f2f2;
-	border: 1px solid #f2f2f2;
+	background-color: var(--color-whitegrey);
+	border: 1px solid var(--color-whitegrey);
 	box-shadow: none;
 	appearance: textfield;
 
@@ -68,8 +67,10 @@
 	position: absolute;
 	top: 0;
 	right: 0;
+	width: 38px;
+	height: 38px;
 	padding: 8px;
-	color: #a9a9a9;
+	color: var(--color-darkgrey);
 	background-color: transparent;
 	border: none;
 	outline: none;
@@ -78,15 +79,43 @@
 
 	&:hover,
 	&:focus {
-		color: #000000;
+		color: var(--color-black);
 	}
 
 	&:active {
-		color: var(--color-accent);
+		color: var(--color-primary);
+	}
+
+	&--increase,
+	&--decrease {
+		&::before,
+		&::after {
+			content: "";
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			width: 12px;
+			height: 3px;
+			background-color: currentColor;
+			transform: translate(-50%, -50%);
+		}
+
+		&::after {
+			transform: translate(-50%, -50%) rotate(90deg);
+		}
+	}
+
+	&--decrease {
+		right: 75px;
+
+		&::after {
+			content: none;
+		}
 	}
 }
 
 .form__trigger-icon {
+	display: block;
 	width: 21px;
 	height: 22px;
 	fill: currentColor;
@@ -94,4 +123,6 @@
 
 .form__submit {
 	width: 100%;
+	margin-top: 24px;
+	padding: 16px;
 }

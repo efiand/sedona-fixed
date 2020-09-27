@@ -1,0 +1,34 @@
+.button {
+	font-weight: 700;
+	font-size: 21px;
+	font-family: inherit;
+	text-transform: inherit;
+	text-align: center;
+	color: var(--color-white);
+	background-color: var(--color-primary);
+	border: none;
+	cursor: pointer;
+
+	&:hover,
+	&:focus {
+		background-color: var(--color-primary-darker);
+	}
+
+	&:active {
+		background-color: var(--color-primary-darkest);
+		opacity: 0.3;
+	}
+
+	&--secondary {
+		background-color: var(--color-secondary);
+
+		&:hover,
+		&:focus {
+			background-color: var(--color-secondary-darker);
+		}
+
+		&:active {
+			background-color: var(--color-secondary-darkest);
+		}
+	}
+}

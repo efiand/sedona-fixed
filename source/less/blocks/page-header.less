@@ -20,7 +20,6 @@
 .page-header__nav-item {
 	padding: 14px 40px 16px 0;
 	font-weight: 700;
-	line-height: 26px;
 
 	&:nth-child(4n+1) {
 		padding-left: 72px;
@@ -52,11 +51,12 @@
 
 	&:hover,
 	&:focus {
-		color: var(--color-accent);
+		color: var(--color-primary);
 	}
 
 	&:active {
-		color: rgba(0, 0, 0, 0.3);
+		color: var(--color-black);
+		opacity: 0.3;
 	}
 
 	&--current {
@@ -64,7 +64,8 @@
 		&:hover,
 		&:focus,
 		&:active {
-			color: var(--color-alter);
+			color: var(--color-secondary);
+			opacity: 1;
 		}
 	}
 }

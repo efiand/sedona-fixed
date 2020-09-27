@@ -5,6 +5,7 @@
 	margin: 8px 0 0;
 	padding: 0;
 	list-style: none;
+	line-height: 21px;
 	text-align: center;
 
 	> li {
@@ -14,7 +15,6 @@
 
 .cards__heading {
 	margin-bottom: 25px;
-	line-height: 1;
 }
 
 .cards__text {
@@ -29,12 +29,12 @@
 
 .cards__item {
 	padding: 48px 48px 54px;
-	background-color: #eeeeee;
+	background-color: var(--color-grey);
 
-	&--alter {
+	&--secondary {
 		grid-column: 1 ~"/" 2;
-		color: #ffffff;
-		background-color: var(--color-accent);
+		color: var(--color-white);
+		background-color: var(--color-primary);
 
 		.cards__text {
 			color: inherit;
@@ -65,10 +65,10 @@
 	display: grid;
 	grid-column: 1 ~"/" -1;
 	grid-template-columns: 1fr 1fr 1fr;
-	background-color: var(--color-accent);
+	background-color: var(--color-primary);
 
 	&:nth-child(even) {
-		.cards__item--alter {
+		.cards__item--secondary {
 			grid-column: 3 ~"/" -1;
 		}
 
@@ -89,7 +89,7 @@
 	.cards__item {
 		padding-top: 160px;
 		padding-bottom: 82px;
-		background-color: #ffffff;
+		background-color: var(--color-white);
 		background-repeat: no-repeat;
 		background-position: 50% 60px;
 	}

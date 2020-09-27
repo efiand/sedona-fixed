@@ -15,11 +15,11 @@
 		<header class="section__header center">
 			<h2 class="visually-hidden">Преимущества</h2>
 			<p class="heading section__heading">Седона — небольшой городок в Аризоне,<br>заслуживающий большего!</p>
-			<p class="text text--air">Рассмотрим 5 причин, по которым Седона круче, чем гранд каньон!</p>
+			<p class="text">Рассмотрим 5 причин, по которым Седона круче, чем гранд каньон!</p>
 		</header>
 		<ol class="cards">
 			<li class="cards__group">
-				<div class="cards__item cards__item--alter">
+				<div class="cards__item cards__item--secondary">
 					<h3 class="cards__heading heading">Настоящий<br>городок</h3>
 					<p class="text cards__text">Седона - не аттракцион для туристов, там течёт своя жизнь</p>
 				</div>
@@ -40,7 +40,7 @@
 				</ul>
 			</li>
 			<li class="cards__group">
-				<div class="cards__item cards__item--alter">
+				<div class="cards__item cards__item--secondary">
 					<h3 class="cards__heading heading">Там есть<br>Мост дьявола</h3>
 					<p class="text cards__text">Да, по нему можно пройти! Если конечно вы осмелитесь</p>
 				</div>
@@ -65,9 +65,9 @@
 		<header class="section__header center">
 			<h2 class="visually-hidden">Поиск гостиницы</h2>
 			<p class="heading search__heading">Заинтересовались?</p>
-			<p class="text text--air">Укажите предполагаемые даты поездки,<br>и мы покажем вам лучшие предложения гостиниц в Седоне</p>
+			<p class="text">Укажите предполагаемые даты поездки,<br>и мы покажем вам лучшие предложения гостиниц в Седоне</p>
 		</header>
-		<button class="search__button" hidden disabled>
+		<button class="button button--secondary search__button" hidden disabled>
 			Поиск гостиницы в Седоне
 		</button>
 		<div class="search__body">
@@ -109,14 +109,14 @@
 						<span class="visually-hidden">Уменьшить количество детей на 1</span>
 					</button>
 					<input class="form__field form__field--num" name="children" id="guests-children"
-						value="0" type="number" min="1" max="99" step="1" required>
+						value="0" type="number" min="0" max="99" step="1" required>
 					<button class="form__trigger form__trigger--increase" hidden type="button">
 						<span class="visually-hidden">Увеличить количество детей на 1</span>
 					</button>
 				</p>
-				<button class="form__submit" type="submit">Найти</button>
+				<button class="button form__submit" type="submit">Найти</button>
 			</form>
-			<div class="map"></div>
+			<div class="search__map"></div>
 		</div>
 	</section>
 {% endblock %}

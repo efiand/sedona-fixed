@@ -1,33 +1,41 @@
 :root {
-	--color-accent: #81b3d2;
-	--color-alter: #766357;
-	--color-alter-hover: #604e43;
-	--color-alter-active: #503e33;
+	--color-blak: #000000;
+	--color-blacky: #333333;
+	--color-darkgrey: #a9a9a9;
+	--color-grey: #eeeeee;
+	--color-whitegrey: #f2f2f2;
+	--color-white: #ffffff;
+	--color-primary: #81b3d2;
+	--color-primary-darker: #669ec0;
+	--color-primary-darkest: #5496bd;
+	--color-secondary: #766357;
+	--color-secondary-darker: #604e43;
+	--color-secondary-darkest: #503e33;
 	--icon-fb: url("fb.svg");
 	--icon-twitter: url("twitter.svg");
 	--icon-youtube: url("youtube.svg");
-	overflow-y: scroll; // чтобы содержимое не скакало влево-вправо при быстрой смене страниц
+	overflow-y: scroll;
 	font-size: 14px;
-	line-height: 1.5;
-	font-family: "PT Sans", "Arial", sans-serif;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: antialiased;
-	text-transform: uppercase;
-	background-color: #f2f2f2;
+	background-color: var(--color-whitegrey);
 }
 
 body {
 	width: 1200px;
 	margin: 0 auto;
-	background-color: #ffffff;
+	line-height: 26px;
+	font-family: "PT Sans", "Arial", sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: antialiased;
+	text-transform: uppercase;
+	background-color: var(--color-white);
+	-webkit-tap-highlight-color: transparent;
 	box-shadow: 0 5px 15px rgba(0, 1, 1, 0.2);
 }
 
 a {
 	text-decoration-skip-ink: none;
 	color: inherit;
-	-webkit-tap-highlight-color: transparent;
-	transition-property: color, opacity, background-color, border-color, box-shadow;
+	transition-property: color, opacity, background-color, border-color;
 	transition-duration: 0.3s;
 	transition-timing-function: ease-in-out;
 
