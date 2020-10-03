@@ -1,20 +1,29 @@
 .page {
+	display: grid;
+	grid-template-rows: auto 1fr auto;
 	width: 1200px;
+	min-height: 100vh;
 	margin: 0 auto;
 	background-color: var(--color-white);
 	box-shadow: 0 5px 15px rgba(0, 1, 1, 0.2);
 }
 
-.page--no-js {
-	.page__init-hidden {
-		// элементы, которые покажутся при инициализации JS
-		display: none;
-	}
+.page__main {
+	grid-column: 1 ~"/" -1;
 }
 
-.page--js {
-	.page__init-show {
-		// элементы, которые скроются  при инициализации JS
-		display: none;
+.page__footer {
+	z-index: 1;
+	grid-column: 1 ~"/" -1;
+	grid-row: -2 ~"/" -1;
+}
+
+.page--index-ready {
+	.page__main {
+		grid-row: 2 ~"/" -1;
+	}
+
+	.page__footer {
+		background-color: var(--color-white-pale-min);
 	}
 }

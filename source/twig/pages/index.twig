@@ -1,5 +1,7 @@
 {% extends '../layout.twig' %}
 
+{% set isIndex = true %}
+
 {% block logo %}
 	<a class="page-header__logo-link">
 		<img src="img/logo-sedona.svg" width="138" height="70" alt="Лого Седоны">
@@ -11,112 +13,104 @@
 		<h1 class="visually-hidden">Седона</h1>
 		<img src="img/emblem-sedona.svg" width="458" height="352" alt="Welcome to the gorgeous Sedona ">
 	</header>
-	<section class="section">
-		<header class="section__header center">
+	<section>
+		<header class="section-header">
 			<h2 class="visually-hidden">Преимущества</h2>
-			<p class="heading section__heading">Седона — небольшой городок в Аризоне,<br>заслуживающий большего!</p>
+			<p class="section-header__heading section-header__heading--air">Седона — небольшой городок в Аризоне, заслуживающий большего!</p>
 			<p class="text">Рассмотрим 5 причин, по которым Седона круче, чем гранд каньон!</p>
 		</header>
 		<ol class="cards">
 			<li class="cards__group">
 				<div class="cards__item cards__item--secondary">
-					<h3 class="cards__heading heading">Настоящий<br>городок</h3>
+					<h3 class="cards__heading">Настоящий<br>городок</h3>
 					<p class="text cards__text">Седона - не аттракцион для туристов, там течёт своя жизнь</p>
 				</div>
 				<img class="cards__img" src="img/advantage-1.jpg" width="800" height="256" alt="Виды города">
 				<ul class="cards__iconable-list">
 					<li class="cards__item cards__item--house">
-						<h4 class="cards__heading heading">Жильё</h4>
+						<h4 class="cards__heading">Жильё</h4>
 						<p class="text">Рекомендуем пожить в настоящем мотеле, всё как в кино!</p>
 					</li>
 					<li class="cards__item cards__item--food">
-						<h4 class="cards__heading heading">Еда</h4>
+						<h4 class="cards__heading">Еда</h4>
 						<p class="text">Всегда заказывайте фирменный бургер, вы не разочаруетесь!</p>
 					</li>
 					<li class="cards__item cards__item--good">
-						<h4 class="cards__heading heading">Сувениры</h4>
+						<h4 class="cards__heading">Сувениры</h4>
 						<p class="text">Не только китайского, но и местного производства!</p>
 					</li>
 				</ul>
 			</li>
 			<li class="cards__group">
 				<div class="cards__item cards__item--secondary">
-					<h3 class="cards__heading heading">Там есть<br>Мост дьявола</h3>
+					<h3 class="cards__heading">Там есть<br>Мост дьявола</h3>
 					<p class="text cards__text">Да, по нему можно пройти! Если конечно вы осмелитесь</p>
 				</div>
 				<img class="cards__img" src="img/advantage-2.jpg" width="800" height="256" alt="Мост дьявола">
 			</li>
 			<li class="cards__item">
-				<h3 class="cards__heading heading">Небольшая<br>площадь</h3>
+				<h3 class="cards__heading">Небольшая<br>площадь</h3>
 				<p class="text cards__text">Все достопримечательности<br>находятся очень близко</p>
 			</li>
 			<li class="cards__item">
-				<h3 class="cards__heading heading">Красивая<br>дорога</h3>
+				<h3 class="cards__heading">Красивая<br>дорога</h3>
 				<p class="text cards__text">Ехать в Седону из Лас-Вегаса совсем не&nbsp;скучно!</p>
 			</li>
 			<li class="cards__item">
-				<h3 class="cards__heading heading">Мало<br>туристов</h3>
+				<h3 class="cards__heading">Мало<br>туристов</h3>
 				<p class="text cards__text">Большинство едет в Гранд Каньон и&nbsp;толпится там</p>
 			</li>
 		</ol>
 	</section>
 
-	<section class="section search">
-		<header class="section__header center">
+	<section class="search">
+		<header class="section-header search__header">
 			<h2 class="visually-hidden">Поиск гостиницы</h2>
-			<p class="heading search__heading">Заинтересовались?</p>
+			<p class="section-header__heading section-header__heading--big">Заинтересовались?</p>
 			<p class="text">Укажите предполагаемые даты поездки,<br>и мы покажем вам лучшие предложения гостиниц в Седоне</p>
 		</header>
 		<button class="button button--secondary search__button" hidden disabled>
 			Поиск гостиницы в Седоне
 		</button>
-		<div class="search__body">
-			<form class="search__form form" action="https://echo.htmlacademy.ru">
-				<p class="form__group">
-					<label class="form__label" for="date-in">Дата заезда:</label>
-					<input class="form__field" name="date_in" id="date-in" value="24 апреля 2017" required>
-					<button class="form__trigger form__trigger--datepick" hidden type="button">
-						<svg class="form__trigger-icon">
-							<use href="img/sprite.min.svg#calendar"/>
-						</svg>
-						<span class="visually-hidden">Выбрать дату заезда</span>
-					</button>
-				</p>
-				<p class="form__group">
-					<label class="form__label" for="date-out">Дата выезда:</label>
-					<input class="form__field" name="date_out" id="date-out" value="4 июля 2017" required>
-					<button class="form__trigger form__trigger--datepick" hidden type="button">
-						<svg class="form__trigger-icon">
-							<use href="img/sprite.min.svg#calendar"/>
-						</svg>
-						<span class="visually-hidden">Выбрать дату выезда</span>
-					</button>
-				</p>
-				<p class="form__group form__group--half">
-					<label class="form__label" for="guests-adults">Взрослые:</label>
-					<button class="form__trigger form__trigger--decrease" hidden type="button">
-						<span class="visually-hidden">Уменьшить количество взрослых на 1</span>
-					</button>
-					<input class="form__field form__field--num" name="adults" id="guests-adults"
-						value="2" type="number" min="1" max="99" step="1" required>
-					<button class="form__trigger form__trigger--increase" hidden type="button">
-						<span class="visually-hidden">Увеличить количество взрослых на 1</span>
-					</button>
-				</p>
-				<p class="form__group form__group--half form__group--half-right">
-					<label class="form__label" for="guests-children">Дети:</label>
-					<button class="form__trigger form__trigger--decrease" hidden type="button">
-						<span class="visually-hidden">Уменьшить количество детей на 1</span>
-					</button>
-					<input class="form__field form__field--num" name="children" id="guests-children"
-						value="0" type="number" min="0" max="99" step="1" required>
-					<button class="form__trigger form__trigger--increase" hidden type="button">
-						<span class="visually-hidden">Увеличить количество детей на 1</span>
-					</button>
-				</p>
-				<button class="button form__submit" type="submit">Найти</button>
-			</form>
-			<div class="search__map"></div>
-		</div>
+		<form class="search__form form" action="https://echo.htmlacademy.ru">
+			<p class="form__group">
+				<label class="form__label" for="date-in">Дата заезда:</label>
+				<input class="form__field" name="date_in" id="date-in" value="24 апреля 2017" required>
+				<button class="form__trigger form__trigger--datepick" hidden type="button">
+					<span class="visually-hidden">Выбрать дату заезда</span>
+				</button>
+			</p>
+			<p class="form__group">
+				<label class="form__label" for="date-out">Дата выезда:</label>
+				<input class="form__field" name="date_out" id="date-out" value="4 июля 2017" required>
+				<button class="form__trigger form__trigger--datepick" hidden type="button">
+					<span class="visually-hidden">Выбрать дату выезда</span>
+				</button>
+			</p>
+			<p class="form__group form__group--half">
+				<label class="form__label" for="guests-adults">Взрослые:</label>
+				<button class="form__trigger form__trigger--decrease" hidden type="button">
+					<span class="visually-hidden">Уменьшить количество взрослых на 1</span>
+				</button>
+				<input class="form__field form__field--num" name="adults" id="guests-adults"
+					value="2" type="number" min="1" max="99" step="1" required>
+				<button class="form__trigger form__trigger--increase" hidden type="button">
+					<span class="visually-hidden">Увеличить количество взрослых на 1</span>
+				</button>
+			</p>
+			<p class="form__group form__group--half form__group--half-right">
+				<label class="form__label" for="guests-children">Дети:</label>
+				<button class="form__trigger form__trigger--decrease" hidden type="button">
+					<span class="visually-hidden">Уменьшить количество детей на 1</span>
+				</button>
+				<input class="form__field form__field--num" name="children" id="guests-children"
+					value="0" type="number" min="0" max="99" step="1" required>
+				<button class="form__trigger form__trigger--increase" hidden type="button">
+					<span class="visually-hidden">Увеличить количество детей на 1</span>
+				</button>
+			</p>
+			<button class="button form__submit" type="submit">Найти</button>
+		</form>
+		<div class="search__map"></div>
 	</section>
 {% endblock %}

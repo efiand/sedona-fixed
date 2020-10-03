@@ -1,32 +1,27 @@
-.search__heading {
-	margin: 12px 0 28px;
-	font-size: 30px;
+.search {
+	display: grid;
+	grid-template-columns: 1fr 568px 1fr;
+}
+
+.search__header {
+	grid-column: 2 ~"/" -2;
 }
 
 .search__button {
-	display: block;
-	width: 568px;
-	margin: 0 auto;
+	grid-column: 2 ~"/" -2;
 	padding: 30px;
 }
 
-.search__body {
-	position: relative;
-}
-
 .search__form {
-	position: relative;
 	z-index: 1;
-	width: 458px;
-	margin: 0 auto;
+	grid-column: 2 ~"/" -2;
+	grid-row: 3 ~"/" 4;
+	margin-bottom: calc(78px + var(--height-footer));
 }
 
 .search__map {
-	position: absolute;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
+	grid-column: 1 ~"/" -1;
+	grid-row: 3 ~"/" 4;
 	background-image: url("../img/map.jpg");
 	background-size: cover;
 }

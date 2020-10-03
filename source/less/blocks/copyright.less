@@ -1,0 +1,29 @@
+.copyright {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.copyright__logo-link {
+	margin-left: 10px;
+
+	&:hover,
+	&:focus {
+		&:not(:active) .copyright__logo {
+			filter: none;
+		}
+	}
+
+	&:active {
+		.copyright__logo {
+			opacity: 0.265;
+			transition: none;
+		}
+	}
+}
+
+.copyright__logo {
+	display: block;
+	filter: brightness(0) grayscale(1);
+	transition: opacity 0.3s ease-in-out, filter 0.3s ease-in-out;
+}

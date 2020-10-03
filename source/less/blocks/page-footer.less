@@ -1,0 +1,26 @@
+.page-footer {
+	display: grid;
+	align-items: center;
+	grid-template-columns: 1fr 1fr 1fr;
+	padding: 22px 56px;
+
+	p {
+		margin: 0;
+	}
+}
+
+.page-footer__contact-link {
+	display: table;
+	margin: 0 auto;
+	font-weight: 700;
+	font-size: 21px;
+	text-decoration: none;
+
+	& + & {
+		margin-top: 9px;
+
+		&:last-child {
+			margin-bottom: 14px;
+		}
+	}
+}

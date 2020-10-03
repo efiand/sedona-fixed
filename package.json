@@ -43,6 +43,7 @@
 	"scripts": {
 		"build": "cross-env NODE_ENV=production gulp build",
 		"deploy": "gh-pages -d build",
+		"release": "yarn build && yarn deploy",
 		"start": "gulp",
 		"test": "gulp test"
 	},

@@ -1,12 +1,15 @@
 .button {
+	box-sizing: border-box; // использование на ссылке и кнопке: унификация
 	font-weight: 700;
 	font-size: 21px;
+	line-height: inherit;
 	font-family: inherit;
 	text-transform: inherit;
 	text-align: center;
 	color: var(--color-white);
 	background-color: var(--color-primary);
 	border: none;
+	transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
 	cursor: pointer;
 
 	&:hover,
@@ -15,8 +18,8 @@
 	}
 
 	&:active {
+		color: var(--color-white-pale);
 		background-color: var(--color-primary-darkest);
-		opacity: 0.3;
 	}
 
 	&--secondary {
