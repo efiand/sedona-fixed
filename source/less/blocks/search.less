@@ -16,7 +16,17 @@
 	z-index: 1;
 	grid-column: 2 ~"/" -2;
 	grid-row: 3 ~"/" 4;
-	margin-bottom: calc(78px + var(--height-footer));
+	margin-bottom: calc(78px + var(--footer-height-amendment));
+	visibility: hidden;
+	transform: scaleY(0);
+	transform-origin: 50% 0;
+	transition: transform 0.5s ease-in-out, visibility 0s 0.5s;
+
+	&--opened {
+		visibility: visible;
+		transform: scaleY(1);
+		transition: transform 0.5s ease-in-out;
+	}
 }
 
 .search__map {

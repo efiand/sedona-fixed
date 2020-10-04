@@ -9,10 +9,11 @@
 	color: var(--color-white);
 	background-color: var(--color-primary);
 	border: none;
-	transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
-	cursor: pointer;
 
 	&:not(:disabled) {
+		transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+		cursor: pointer;
+
 		&:hover,
 		&:focus {
 			background-color: var(--color-primary-darker);
@@ -22,9 +23,7 @@
 			color: var(--color-white-pale);
 			background-color: var(--color-primary-darkest);
 		}
-
 	}
-
 
 	&--secondary {
 		background-color: var(--color-secondary);
