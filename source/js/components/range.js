@@ -1,6 +1,4 @@
-const MAX_LENGTH = 4;
-
-const getStyle = (node, property, pseudo = null) => {
+const getDigitalStyle = (node, property, pseudo = null) => {
 	return parseInt(getComputedStyle(node, pseudo)[property], 10);
 };
 
@@ -17,6 +15,7 @@ export default class Range {
 		this._inputMin = container.querySelector(`.range__input--min`);
 		this._inputMax = container.querySelector(`.range__input--max`);
 		this._maxValue = this._inputMax.max;
+		this._maxLength = this._maxValue.toString().length;
 		this._inputWidth = this._inputMin.clientWidth;
 		this._step = Number(this._inputMin.step);
 
@@ -79,8 +78,8 @@ export default class Range {
 			startX = xCoord;
 
 			const isMax = target === this._buttonMax;
-			const minLeft = isMax ? getStyle(this._buttonMin, `left`) : 0;
-			const maxLeft = isMax ? Number(this._inputMax.max / this._step) : getStyle(this._buttonMax, `left`);
+			const minLeft = isMax ? getDigitalStyle(this._buttonMin, `left`) : 0;
+			const maxLeft = isMax ? Number(this._inputMax.max / this._step) : getDigitalStyle(this._buttonMax, `left`);
 
 			if (left < minLeft) {
 				left = minLeft;
@@ -134,7 +133,7 @@ export default class Range {
 	}
 
 	_setInputWidth(input) {
-		input.style.width = `${this._inputWidth * input.value.toString().length / MAX_LENGTH}px`;
+		input.style.width = `${this._inputWidth * input.value.toString().length / this._maxLength}px`;
 	}
 
 	_refresh(target = null) {
