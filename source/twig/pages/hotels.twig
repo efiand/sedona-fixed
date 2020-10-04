@@ -19,52 +19,59 @@
 	<h1 class="visually-hidden">Поиск гостиницы в Седоне</h1>
 	<form class="filter" action="https://echo.htmlacademy.ru">
 		<fieldset class="filter__set">
-			<legend class="filter__set-title">Инфраструктура:</legend>
+			<legend class="filter__title">Инфраструктура:</legend>
 			<label class="filter__group">
-				<input class="visually-hidden" name="services" value="pool" type="checkbox" checked>
-				<span class="checkbox">Бассейн</span>
+				<input class="visually-hidden filter__check-control" name="services[]" value="pool" type="checkbox" checked>
+				<span class="filter__check">Бассейн</span>
 			</label>
 			<label class="filter__group">
-				<input class="visually-hidden" name="services" value="parking" type="checkbox">
-				<span class="checkbox">Парковка</span>
+				<input class="visually-hidden filter__check-control" name="services[]" value="parking" type="checkbox">
+				<span class="filter__check">Парковка</span>
 			</label>
 			<label class="filter__group">
-				<input class="visually-hidden" name="services" value="wifi" type="checkbox">
-				<span class="checkbox">Wi-Fi</span>
+				<input class="visually-hidden filter__check-control" name="services[]" value="wifi" type="checkbox" disabled>
+				<span class="filter__check">Wi-Fi</span>
 			</label>
 		</fieldset>
 		<fieldset class="filter__set">
-			<legend class="filter__set-title">Тип жилья:</legend>
+			<legend class="filter__title">Тип жилья:</legend>
 			<label class="filter__group">
-				<input class="visually-hidden" name="types" value="hotel" type="checkbox" checked>
-				<span class="checkbox">Гостиница</span>
+				<input class="visually-hidden filter__check-control" name="types[]" value="hotel" type="checkbox" checked>
+				<span class="filter__check">Гостиница</span>
 			</label>
 			<label class="filter__group">
-				<input class="visually-hidden" name="types" value="motel" type="checkbox" checked>
-				<span class="checkbox">Мотель</span>
+				<input class="visually-hidden filter__check-control" name="types[]" value="motel" type="checkbox" checked>
+				<span class="filter__check">Мотель</span>
 			</label>
 			<label class="filter__group">
-				<input class="visually-hidden" name="types" value="apartments" type="checkbox" checked>
-				<span class="checkbox">Апартаменты</span>
+				<input class="visually-hidden filter__check-control" name="types[]" value="apartments" type="checkbox" checked disabled>
+				<span class="filter__check">Апартаменты</span>
 			</label>
 		</fieldset>
 		<fieldset class="range filter__set">
-			<legend class="filter__set-title">Стоимость в сутки (р):</legend>
-			<p class="range__fields">
-				<label class="range__value-group">
+			<legend class="filter__title">Стоимость в сутки (р):</legend>
+			<p class="range__values">
+				<label class="range__group">
 					От
-					<span class="range__value-show">
-						<input name="price_min" value="0" type="number" min="0" max="3500" step="50">
+					<span class="range__value">
+						<input class="range__input range__input--min" name="price[]" value="0" type="number" min="0" max="3000" step="10">
 					</span>
 				</label>
-				<label class="range__value-group">
+				<label class="range__group">
 					До
-					<span class="range__value-show">
-						<input name="price_max" value="3000" type="number" min="0" max="3500" step="50">
+					<span class="range__value">
+						<input class="range__input range__input--max" name="price[]" value="2500" type="number" min="0" max="3000" step="10">
 					</span>
 				</label>
 			</p>
-			<div class="range__controls">
+			<div class="range__controls" hidden>
+				<div class="range__progress"></div>
+				<button class="range__button range__button--min" type="button">
+					<span class="visually-hidden">Установить минимум</span>
+				</button>
+				<button class="range__button range__button--max" type="button">
+					<span class="visually-hidden">Установить максимум</span>
+				</button>
 			</div>
 			<button class="filter__submit" type="submit">Показать</button>
 		</fieldset>

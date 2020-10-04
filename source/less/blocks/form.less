@@ -48,8 +48,9 @@
 	text-transform: inherit;
 	-webkit-text-fill-color: currentColor;
 	background-color: var(--color-whitegrey);
-	border: 1px solid var(--color-whitegrey);
+	border: 2px solid var(--color-whitegrey);
 	box-shadow: none;
+	transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
 	appearance: textfield;
 
 	&--num {
@@ -60,6 +61,16 @@
 	&::-webkit-outer-spin-button,
 	&::-webkit-inner-spin-button {
 		appearance: none;
+	}
+
+	&:hover {
+		background-color: var(--color-grey-secondary);
+		border-color: var(--color-grey-secondary);
+	}
+
+	&:focus {
+		background-color: var(--color-white);
+		border-color: var(--color-grey-tertiary);
 	}
 }
 
