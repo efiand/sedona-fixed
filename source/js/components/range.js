@@ -47,24 +47,23 @@ export default class Range {
 			evt.preventDefault();
 
 			if (field.value > Number(field.min)) {
-				field.value = Number(field.value - this._step);
+				field.value = Number(field.value) - this._step;
 			}
 			break;
-		case `Right`:
 		case `Up`:
+		case `Right`:
 		case `ArrowUp`:
 		case `ArrowRight`:
 			evt.preventDefault();
 
 			if (field.value < Number(field.max)) {
-				field.value = Number(field.value + this._step);
+				field.value = Number(field.value) + this._step;
 			}
 			break;
 		default:
-			return;
 		}
 
-		this._refresh(evt.target);
+		this._refresh(field);
 	}
 
 	_moveHandler(startEvent) {
@@ -152,21 +151,17 @@ export default class Range {
 		this._buttonMax.style.left = `${left + width}px`;
 
 		if (target) {
-			this._setLimits(target);
+			// Изменяем крайние значения инпутов
+			if (target === this._inputMin || target === this._buttonMin) {
+				this._inputMin.max = Number(this._inputMax.value);
+			} else {
+				this._inputMax.min = Number(this._inputMin.value);
+			}
 			this._setInputWidth(target);
 		} else {
 			this._setInputWidth(this._inputMin);
 			this._setInputWidth(this._inputMax);
 		}
 		this._buttonMin.style.zIndex = Number(this._inputMin.value === this._maxValue);
-	}
-
-	_setLimits(target) {
-		// Изменяем крайние значения инпутов, чтобы они не соприкасались
-		if (target === this._inputMin || target === this._buttonMin) {
-			this._inputMin.max = Number(this._inputMax.value);
-		} else {
-			this._inputMax.min = Number(this._inputMin.value);
-		}
 	}
 }
