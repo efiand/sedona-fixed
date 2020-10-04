@@ -12,26 +12,32 @@
 	transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
 	cursor: pointer;
 
-	&:hover,
-	&:focus {
-		background-color: var(--color-primary-darker);
+	&:not(:disabled) {
+		&:hover,
+		&:focus {
+			background-color: var(--color-primary-darker);
+		}
+
+		&:active {
+			color: var(--color-white-pale);
+			background-color: var(--color-primary-darkest);
+		}
+
 	}
 
-	&:active {
-		color: var(--color-white-pale);
-		background-color: var(--color-primary-darkest);
-	}
 
 	&--secondary {
 		background-color: var(--color-secondary);
 
-		&:hover,
-		&:focus {
-			background-color: var(--color-secondary-darker);
-		}
+		&:not(:disabled) {
+			&:hover,
+			&:focus {
+				background-color: var(--color-secondary-darker);
+			}
 
-		&:active {
-			background-color: var(--color-secondary-darkest);
+			&:active {
+				background-color: var(--color-secondary-darkest);
+			}
 		}
 	}
 }
