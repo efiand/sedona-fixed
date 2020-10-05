@@ -10,7 +10,7 @@ const css = () => src(`source/less/entries/*.less`)
 		require(`cssnano`)
 	]))
 	.pipe(cssBase64({
-		baseDir: `../../sprite`,
+		baseDir: `../../icons`,
 		extensionsAllowed: [
 			`.svg`,
 			`.png`
