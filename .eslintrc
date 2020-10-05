@@ -2,7 +2,11 @@
 	"extends": "eslint:all",
 	"env": {
 		"browser": true,
+		"es6": true,
 		"node": true
+	},
+	"globals": {
+		"flatpickr": "readonly"
 	},
 	"parser": "babel-eslint",
 	"parserOptions": {

@@ -11,10 +11,5 @@ export default class Search {
 		this._formToggler.addEventListener(`click`, () => {
 			this._form.classList.toggle(`search__form--opened`);
 		});
-
-		// Показ неактуальных без загрузки скрипта элементов форм
-		for (const hiddenElement of container.querySelectorAll(`[hidden]`)) {
-			hiddenElement.removeAttribute(`hidden`);
-		}
 	}
 }
