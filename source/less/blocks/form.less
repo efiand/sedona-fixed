@@ -131,7 +131,7 @@
 	&--decrease {
 		&::before,
 		&::after {
-			width: 12px;
+			width: 11px;
 			height: 3px;
 			background-color: currentColor;
 		}
@@ -141,8 +141,16 @@
 		}
 	}
 
+	&--increase::after {
+		margin: 1px;
+	}
+
 	&--decrease {
 		right: 75px;
+
+		&::before {
+			width: 12px;
+		}
 
 		&::after {
 			content: none;
