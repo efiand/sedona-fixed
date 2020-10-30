@@ -1,7 +1,8 @@
 .filter {
 	display: grid;
-	grid-template-columns: 255px 1fr 392px;
-	padding: 24px 0 30px 72px;
+	grid-template-columns: 225px 225px 1fr;
+	gap: 30px;
+	padding: 24px 72px 32px;
 	line-height: 21px;
 	color: var(--color-white);
 	background-image: url("../img/filter-bg.jpg");
@@ -10,8 +11,17 @@
 
 .filter__set {
 	margin: 0;
-	padding: 0 72px 0 0;
+	padding: 0;
 	border: none;
+}
+
+.filter__group {
+	width: 328px;
+	margin-left: auto;
+
+	.filter__set {
+		margin-left: 10px;
+	}
 }
 
 .filter__title {
@@ -22,41 +32,14 @@
 	font-size: 16px;
 }
 
-.filter__group {
+.filter__option {
 	display: table;
 	clear: both;
-	margin: 23px 0 0;
+	margin: 25px 0 0;
 
 	&:first-of-type {
 		margin-top: 48px;
 	}
-}
-
-.filter__check {
-	position: relative;
-	display: block;
-	padding: 0 0 2px 40px;
-	cursor: pointer;
-
-	&::before {
-		content: "";
-		position: absolute;
-		top: 0;
-		bottom: 0;
-		left: 0;
-		width: 30px;
-		background-image: url("checkbox-off.svg");
-		background-repeat: no-repeat;
-	}
-}
-
-.filter__check-control:checked + .filter__check::before {
-	background-image: url("checkbox-on.svg");
-}
-
-.filter__check-control:disabled + .filter__check {
-	opacity: 0.285;
-	cursor: not-allowed;
 }
 
 .filter__submit {

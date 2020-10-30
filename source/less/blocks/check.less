@@ -1,0 +1,28 @@
+.check {
+	position: relative;
+	display: block;
+	padding-left: 40px;
+	cursor: pointer;
+}
+
+.check__input {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 23px;
+	height: 23px;
+	margin: 0;
+	background-image: url("checkbox-off.svg");
+	background-repeat: no-repeat;
+	appearance: none;
+
+	&:checked {
+		width: 27px;
+		background-image: url("checkbox-on.svg");
+	}
+
+	&:disabled {
+		opacity: 0.285;
+		cursor: not-allowed;
+	}
+}
