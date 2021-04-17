@@ -21,6 +21,7 @@
 	--color-secondary-darker: #604e43;
 	--color-secondary-darkest: #503e33;
 	--footer-height-amendment: 2px; // поправка на высоту футера для отступа поисковой формы (реализация наложения)
+	overflow-x: hidden;
 	overflow-y: scroll;
 	font-size: 14px;
 	background-color: var(--color-whitegrey);
@@ -61,5 +62,31 @@ img {
 	to {
 		transform: translate3d(0, 0, 0);
 		opacity: 1;
+	}
+}
+
+@keyframes flipInX {
+	from {
+		transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
+		opacity: 0;
+		animation-timing-function: ease-in;
+	}
+
+	40% {
+		transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
+		animation-timing-function: ease-in;
+	}
+
+	60% {
+		transform: perspective(400px) rotate3d(1, 0, 0, 10deg);
+		opacity: 1;
+	}
+
+	80% {
+		transform: perspective(400px) rotate3d(1, 0, 0, -5deg);
+	}
+
+	to {
+		transform: perspective(400px);
 	}
 }

@@ -1,3 +1,5 @@
+import { setAnimation } from '../utils';
+
 const TIMEOUT = 100;
 
 export default class Form {
@@ -6,6 +8,7 @@ export default class Form {
 			return;
 		}
 
+		this._container = container;
 		this._pickers = {};
 
 		for (const trigger of container.querySelectorAll(`.form__trigger`)) {
@@ -26,5 +29,7 @@ export default class Form {
 				}
 			});
 		}
+
+		setAnimation(this._container, `form--animated`);
 	}
 }

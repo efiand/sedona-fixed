@@ -5,6 +5,11 @@
 	font-weight: 700;
 	background-color: var(--color-white);
 	box-shadow: 0 7px 15px rgba(0, 1, 1, 0.15);
+	backface-visibility: visible;
+
+	&--animated {
+		animation: flipInX 1.5s ease-in-out;
+	}
 }
 
 .form__group {
